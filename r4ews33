@@ -1,0 +1,210 @@
+local player = game.Players.LocalPlayer
+
+if player.Name == "IAmTheRagnorock, idkwatusaid, eating_pizzarn" then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Jerry Ware!", "Synapse")
+
+
+local Tab = Window:NewTab("Main")
+local MainSection = Tab:NewSection("Kraken mine fr")
+
+MainSection:NewButton("Infinite Yield", "admin commands", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+
+MainSection:NewButton("Auto Reroll (Legendary and higher) must have some", "rerolls fast for u", function()
+    local WHITELISTED = {"Hañma", "Kageyama", "Songoku", "Kagutsuchi", "Sung", "Raijin", "Sanji", "Ryu", "Fujin", "Wu", "Kage", "Ohma", "Karu" ,"Akuma", "Mikazuchi", "Kure"}
+
+while wait(0.150) do
+   if table.find(WHITELISTED, tostring(game.Players.LocalPlayer.PlayerGui.MainGui.StatusFrame["ClanName"].Text):split(" ")[2]) == nil then
+       game.ReplicatedStorage.Reroll:FireServer("BP")
+   else
+       break
+   end
+end
+end)
+
+local Tab = Window:NewTab("Foods")
+local FoodSection = Tab:NewSection("kraken is the best ong")
+
+FoodSection:NewToggle("Ramen", "Auto eat ramen", function(state)
+    if state then
+        getgenv().toggle = true;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Ramen" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    else
+        getgenv().toggle = false;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Ramen" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    end
+end)
+
+
+FoodSection:NewToggle("Burger", "Auto eat Burger", function(state)
+    if state then
+        getgenv().toggle = true;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Burger" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    else
+        getgenv().toggle = false;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Burger" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    end
+end)
+
+
+FoodSection:NewToggle("Chicken", "black people food fr", function(state)
+    if state then
+        getgenv().toggle = true;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Chicken" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    else
+        getgenv().toggle = false;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Chicken" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    end
+end)
+
+
+FoodSection:NewToggle("Protein Shakes", "auto drink Protien Shakes", function(state)
+    if state then
+        getgenv().toggle = true;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Protein Shake" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    else
+        getgenv().toggle = false;
+while getgenv().toggle do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.name == "Protein Shake" then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+end
+    end
+end)
+
+
+local Tab = Window:NewTab("Auto Perfect Block")
+local AutoSection = Tab:NewSection("kraken > eternity ")
+
+AutoSection:NewToggle("Auto Perfect Block (NOT 100% ACCURATE)", "Perfect block automaticly", function(state)
+    if state then
+        local playerl = {}
+getgenv().Block = true
+getgenv().Distance = 10
+
+task.spawn(function()
+while task.wait() do
+task.spawn(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if v ~= game.Players.LocalPlayer and not table.find(playerl,v) then
+table.insert(playerl,v)
+task.spawn(function()
+v.ChildAdded:Connect(function(a)
+if (a.Name == "BlockBreakCD" or a.Name == "Combat") and getgenv().Block == true and game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position) <= getgenv().Distance then
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Block",game:GetService("Players").LocalPlayer.Character.LocalHandler.Blocking,true)
+task.wait(0.325)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Block",game:GetService("Players").LocalPlayer.Character.LocalHandler.Blocking,false)
+end
+end)
+end)
+end
+end
+end)
+end
+end)
+    else
+        local playerl = {}
+getgenv().Block = false
+getgenv().Distance = 7
+
+task.spawn(function()
+while task.wait(0.1) do
+task.spawn(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if v ~= game.Players.LocalPlayer and not table.find(playerl,v) then
+table.insert(playerl,v)
+task.spawn(function()
+v.ChildAdded:Connect(function(a)
+if (a.Name == "BlockBreakCD" or a.Name == "Combat") and getgenv().Block == true and game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position) <= getgenv().Distance then
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Block",game:GetService("Players").LocalPlayer.Character.LocalHandler.Blocking,true)
+task.wait(0.325)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Block",game:GetService("Players").LocalPlayer.Character.LocalHandler.Blocking,false)
+end
+end)
+end)
+end
+end
+end)
+end
+end)
+    end
+end)
+
+
+local Tab = Window:NewTab("SpecialTrainers")
+local StyleSection = Tab:NewSection("eternity more like black")
+
+StyleSection:NewButton("Formless", "instantly give style", function()
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer("SpecialTrainer","Formless")
+end)
+
+StyleSection:NewButton("Beast", "gives style instantly", function()
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer("SpecialTrainer","Beast")
+end)
+
+
+
+
+
+
+
+
+
+wait (1) do
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "HEHEHE";
+        Text = "jerry hot";
+        Icon = "rbxassetid://13546109353";
+        Duration = 10;
+        })
+end
+else
+    player:Kick("naughty boy")
+end
